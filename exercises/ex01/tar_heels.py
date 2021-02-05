@@ -15,6 +15,6 @@ else:
         print("TAR")
     else:
         if b == 0:
-            print("Heels")
+            print("HEELS")
         else:
             print("CAROLINA")

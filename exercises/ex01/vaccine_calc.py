@@ -1,6 +1,6 @@
 """A vaccination calculator."""
 
-__author__ = "YOUR PID HERE"
+__author__ = "730442945"
 
 # The datetime data type is imported from the datetime library.
 # A datetime object models a specific date and time.
@@ -18,32 +18,32 @@ from datetime import timedelta
 
 
 # Begin your solution here...
-Pop: int = int(input("Population: "))
-Doses: int = int(input("Doses Administered: "))
-Per_day: int = int(input("Doses per day: "))
-Target_Percent: int = int(input("Target percent vaccinated: "))
+pop: int = int(input("Population: "))
+doses: int = int(input("Doses Administered: "))
+per_day: int = int(input("Doses per day: "))
+target_percent: int = int(input("Target percent vaccinated: "))
 
-doses_halved: int = Doses / 2
-half_per_day: int = Per_day / 2
-Percent: float = Target_Percent / 100
+doses_halved: int = doses / 2
+half_per_day: int = per_day / 2
+percent: float = target_percent / 100
 
-Target: float = Pop * Percent - doses_halved
-Days: float = Target / half_per_day
+target: float = pop * percent - doses_halved
+days: float = target / half_per_day
 
-days_number: int = round(Days)
+days_number: int = round(days)
 
 today: datetime = datetime.today()
 day_change: timedelta = timedelta(days_number)
 final: datetime = today + day_change
 
-Tp: str = str(Target_Percent)
-A: str = str(days_number)
+target_string: str = str(target_percent)
+days_string: str = str(days_number)
 
 wwr = "We will reach "
 vi = "% vaccination in "
 dwf = " days, which falls on "
 date = (final.strftime("%B %d, %Y"))
 
-output = wwr + Tp + vi + A + dwf + date 
+output = wwr + target_string + vi + days_string + dwf + date 
 
 print(output)
