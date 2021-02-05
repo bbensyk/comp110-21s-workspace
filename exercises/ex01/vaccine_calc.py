@@ -19,25 +19,25 @@ from datetime import timedelta
 
 # Begin your solution here...
 Pop: int = int(input("Population: "))
-DoAd: int = int(input("Doses Administered: "))
-DpD: int = int(input("Doses per day: "))
-TpV: int = int(input("Target percent vaccinated: "))
+Doses: int = int(input("Doses Administered: "))
+Per_day: int = int(input("Doses per day: "))
+Target_Percent: int = int(input("Target percent vaccinated: "))
 
-dah: int = DoAd / 2
-dpdh: int = DpD / 2
-Percent: float = TpV / 100
+doses_halved: int = Doses / 2
+half_per_day: int = Per_day / 2
+Percent: float = Target_Percent / 100
 
-Target: float = Pop * Percent - dah
-Days: float = Target / dpdh
+Target: float = Pop * Percent - doses_halved
+Days: float = Target / half_per_day
 
-a: int = round(Days)
+days_number: int = round(Days)
 
 today: datetime = datetime.today()
-b: timedelta = timedelta(a)
-final: datetime = today + b
+day_change: timedelta = timedelta(days_number)
+final: datetime = today + day_change
 
-Tp: str = str(TpV)
-A: str = str(a)
+Tp: str = str(Target_Percent)
+A: str = str(days_number)
 
 wwr = "We will reach "
 vi = "% vaccination in "
